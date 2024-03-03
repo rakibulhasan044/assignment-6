@@ -1,5 +1,6 @@
 const cardContainer = document.getElementById('card-container');
-
+const markReadContainer = document.getElementById('mark-read-container');
+const countRead = document.getElementById('count')
 let count = 0;
 const allPost = async() => {
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts')
@@ -68,10 +69,21 @@ const allPost = async() => {
 async function markRead() {
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts')
     const data = await res.json();
-    data.posts.forEach(element =>{
-        
-    })
+        console.log(data.posts)
+        const div = document.createElement('div');
+        div.innerHTML = `
+        <div class="flex justify-between bg-white p-3 rounded-xl mb-3">
+            <h4>${data.posts[0].title}</h4>
+            <p class="flex justify-between items-center text-gray-500 gap-2">
+                <i class="fa-regular fa-eye"></i><span>11212</span>
+            </p>
+        </div>
+        `
+    markReadContainer.appendChild(div);
+    const count2 = markReadContainer.childNodes.length;
+    console.log(count2)
+    countRead.innerText = count2 - 3;
 }
+
+
 allPost();
-
-
