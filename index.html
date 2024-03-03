@@ -1,16 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-    <nav>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    </nav>
+    <style>
+        .font-mulish {
+        font-family: 'Mulish', sans-serif;
+    }
+    </style>
+</head>
+<body class="font-mulish text-white">
+    <header class="container mx-auto px-4">
+        <nav class="flex items-center gap-1 justify-between py-6">
+            <div>
+                <img src="images/logo.png" alt="">
+            </div>
+            <div>
+                <ul class="flex gap-2 items-center">
+                    <div class="tooltip" data-tip="home">
+                        <li class="bg-gray-200 rounded-full px-2 py-1"><i class="fa-solid fa-house"></i></li>
+                    </div>
+                    <div class="tooltip" data-tip="write">
+                        <li class="bg-gray-200 rounded-full px-2 py-1"><i class="fa-solid fa-pen"></i></li>
+                    </div>
+                    <div class="tooltip" data-tip="add">
+                        <li class="bg-gray-200 rounded-full px-2 py-1"><i class="fa-solid fa-user-plus"></i></li>
+                    </div>
+                      <div class="tooltip" data-tip="flag">
+                        <li class="bg-gray-200 rounded-full px-2 py-1"><i class="fa-solid fa-flag"></i></li>
+                      </div>
+                      <div class="tooltip" data-tip="sing in">
+                        <button class="btn bg-[#797DFC] text-white rounded-2xl">Sing In</button>
+                      </div>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero relative overflow-hidden rounded-[36px] py-10 md:py-24 lg:py-32" style="background-image: url(images/Rectangle\ 1.png);">
+            <div class=" hero absolute bottom-0">
+                <img class="w-[100%]" src="images/bgbanner.png">
+            </div>
+            <div class="flex flex-col md:flex-row gap-6 md:gap-10 lg:gap-32 justify-between items-center mx-2 md:mx-6 space--2">
+                <!-- left div -->
+                <div class="space-y-3">
+                    <h1 class="text-white text-5xl lg:text-6xl font-extrabold">Welcome to the <br>
+                    <span class="text-5xl lg:text-6xl font-extrabold text-[#797DFC]">ReTro </span>Forum</h1>
+                    <p>Share your favorite opinion and win and wp forum coffee mug!</p>
+                    <div class="bg-white flex justify-between p-2 rounded-2xl">
+                        <input type="text" placeholder="Search here anything">
+                        <button class="bg-[#797DFC] py-1 px-2 md:px-4 rounded-2xl">Search</button>
+                    </div>
+                </div>
+                <!-- right div -->
+                <div class="bg-white p-4 md:py-8 md:px-6 rounded-xl">
+                    <div class="flex justify-between text-black gap-12">
+                        <p>Registered Users</p>
+                        <p>01</p>
+                    </div>
+                    <div class="flex justify-between text-black">
+                        <p>Forum</p>
+                        <p>05</p>
+                    </div>
+                    <div class="flex justify-between text-black">
+                        <p>Topics</p>
+                        <p>01</p>
+                    </div>
+                    <div class="flex justify-between text-black">
+                        <p>Replies</p>
+                        <p>01</p>
+                    </div>
+                </div>
+            </div> 
+          </div>
+    </header>
     <main>
         <h1>hello</h1>
     </main>
