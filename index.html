@@ -1,148 +1,189 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
 
     <style>
-        .font-mulish {
-        font-family: 'Mulish', sans-serif;
-    }
+      .font-mulish {
+        font-family: "Mulish", sans-serif;
+      }
     </style>
-</head>
-<body class="font-mulish text-black">
+  </head>
+  <body class="font-mulish text-black">
     <header class="container mx-auto px-4">
-        <nav class="flex items-center gap-1 justify-between py-6">
-            <div>
-                <h2 class="text-2xl md:text-3xl font-semibold md:font-extrabold">SteAm</h2>
+      <nav class="flex items-center gap-1 justify-between py-6">
+        <div>
+          <h2 class="text-2xl md:text-3xl font-semibold md:font-extrabold">
+            SteAm
+          </h2>
+        </div>
+        <div>
+          <ul class="flex gap-2 items-center">
+            <div class="tooltip" data-tip="home">
+              <li class="bg-gray-200 rounded-full px-2 py-1">
+                <i class="fa-solid fa-house"></i>
+              </li>
             </div>
-            <div>
-                <ul class="flex gap-2 items-center">
-                    <div class="tooltip" data-tip="home">
-                        <li class="bg-gray-200 rounded-full px-2 py-1"><i class="fa-solid fa-house"></i></li>
-                    </div>
-                    <div class="tooltip" data-tip="write">
-                        <li class="bg-gray-200 rounded-full px-2 py-1"><i class="fa-solid fa-pen"></i></li>
-                    </div>
-                    <div class="tooltip" data-tip="add">
-                        <li class="bg-gray-200 rounded-full px-2 py-1"><i class="fa-solid fa-user-plus"></i></li>
-                    </div>
-                    <div class="tooltip" data-tip="flag">
-                        <li class="bg-gray-200 rounded-full px-2 py-1"><i class="fa-solid fa-flag"></i></li>
-                    </div>
-                    <div class="tooltip" data-tip="sing in">
-                        <button class="btn bg-[#797DFC] text-white rounded-2xl">Sing In</button>
-                    </div>
-                </ul>
+            <div class="tooltip" data-tip="write">
+              <li class="bg-gray-200 rounded-full px-2 py-1">
+                <i class="fa-solid fa-pen"></i>
+              </li>
             </div>
-        </nav>
-        <div class="hero relative overflow-hidden rounded-[36px] py-10 md:py-24 lg:py-32 text-white" style="background-image: url(images/Rectangle\ 1.png);">
-            <div class=" hero absolute bottom-0">
-                <img class="w-[100%]" src="images/bgbanner.png">
+            <div class="tooltip" data-tip="add">
+              <li class="bg-gray-200 rounded-full px-2 py-1">
+                <i class="fa-solid fa-user-plus"></i>
+              </li>
             </div>
-            <div class="flex flex-col md:flex-row gap-6 md:gap-10 lg:gap-32 justify-between items-center mx-2 md:mx-6">
-                <!-- left div -->
-                <div class="space-y-3 z-10">
-                    <h1 class="text-white text-5xl lg:text-6xl font-extrabold">Welcome to the <br>
-                    <span class="text-5xl lg:text-6xl font-extrabold text-[#797DFC]">SteAm </span>Forum</h1>
-                    <p>Share your favorite opinion and win and wp forum coffee mug!</p>
-                    <div class="bg-white flex justify-between p-2 rounded-2xl">
-                        <input class="text-black border-none" id="search-field" type="text" placeholder="Search here anything">
-                        <button id="search-btn" class="bg-[#797DFC] py-1 px-2 md:px-4 rounded-2xl" onclick="searchByName()">Search</button>
-                    </div>
-                </div>
-                <!-- right div -->
-                <div class="bg-white p-4 md:py-8 md:px-6 rounded-xl">
-                    <div class="flex justify-between text-black gap-12">
-                        <p>Registered Users</p>
-                        <p>01</p>
-                    </div>
-                    <div class="flex justify-between text-black">
-                        <p>Forum</p>
-                        <p>05</p>
-                    </div>
-                    <div class="flex justify-between text-black">
-                        <p>Topics</p>
-                        <p>01</p>
-                    </div>
-                    <div class="flex justify-between text-black">
-                        <p>Replies</p>
-                        <p>01</p>
-                    </div>
-                </div>
-            </div> 
+            <div class="tooltip" data-tip="flag">
+              <li class="bg-gray-200 rounded-full px-2 py-1">
+                <i class="fa-solid fa-flag"></i>
+              </li>
+            </div>
+            <div class="tooltip" data-tip="sing in">
+              <button class="btn bg-[#797DFC] text-white rounded-2xl">
+                Sing In
+              </button>
+            </div>
+          </ul>
+        </div>
+      </nav>
+      <div
+        class="hero relative overflow-hidden rounded-[36px] py-10 md:py-24 lg:py-32 text-white"
+        style="background-image: url(images/Rectangle\ 1.png)"
+      >
+        <div class="hero absolute bottom-0">
+          <img class="w-[100%]" src="images/bgbanner.png" />
+        </div>
+        <div class="flex flex-col md:flex-row gap-6 md:gap-10 lg:gap-32 justify-between items-center mx-2 md:mx-6">
+          <!-- left div -->
+          <div class="space-y-3 z-10">
+            <h1 class="text-white text-5xl lg:text-6xl font-extrabold">
+              Welcome to the <br />
+              <span class="text-5xl lg:text-6xl font-extrabold text-[#797DFC]">SteAm </span>Forum</h1>
+            <p class="">
+              Are you interested in what's going on aroud the world? Then,you
+              have came to the right place.
+            </p>
+            <div class="bg-white flex justify-between p-2 rounded-2xl">
+              <input class="text-black border-none w-3/4 md:w-5/6 px-5" id="search-field" type="text" placeholder="Search here anything">
+              <button id="search-btn" class="bg-[#797DFC] py-1 px-2 md:px-4 rounded-2xl" onclick="searchByName()">Search</button>
+            </div>
           </div>
+          <!-- right div -->
+          <div class="bg-white p-4 md:py-8 md:px-6 rounded-xl">
+            <div class="flex justify-between text-black gap-12">
+              <p>Registered Users</p>
+              <p>01</p>
+            </div>
+            <div class="flex justify-between text-black">
+              <p>Forum</p>
+              <p>05</p>
+            </div>
+            <div class="flex justify-between text-black">
+              <p>Topics</p>
+              <p>01</p>
+            </div>
+            <div class="flex justify-between text-black">
+              <p>Replies</p>
+              <p>01</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
     <main class="mb-10">
-        <!-- lets discuss -->
-        <section class="container mx-auto mt-8 md:mt-12 lg:mt-24 px-4">
-            <div class="text-center space-y-2">
-                <h1 class="text-black text-4xl font-extrabold">Let's Discuss</h1>
-                <p class="text-gray-400 ">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined </p>
+      <!-- lets discuss -->
+      <section class="container mx-auto mt-8 md:mt-12 lg:mt-24 px-4">
+        <div class="text-center space-y-2">
+          <h1 class="text-black text-4xl font-extrabold">Let's Discuss</h1>
+          <p class="text-gray-400">
+            Share your thought here and get to know others openion.
+          </p>
+        </div>
+        <div id="loading-spinner" class="text-center my-40 hidden">
+          <span class="loading text-primary loading-spinners loading-lg"></span>
+        </div>
+        <div class="flex flex-col md:flex-row gap-4 w-full mt-4">
+          <!--left card -->
+          <div id="card-container" class="w-full md:w-[70%]"></div>
+          <!-- right div -->
+          <div class="bg-gray-100 rounded-2xl p-3 w-full md:w-[30%] mb-4">
+            <div class="flex justify-between pb-3">
+              <h4 class="font-semibold">Title</h4>
+              <p class="text-gray-500">
+                Mark as read (<span id="count">0</span>)
+              </p>
             </div>
-            <div id="loading-spinner" class="text-center my-40 hidden">
-                <span class="loading text-primary loading-spinners loading-lg"></span>
-              </div>
-            <div class="flex flex-col md:flex-row gap-4 w-full mt-4">
-                <!--left card -->
-                <div id="card-container" class="w-full md:w-[70%]">
-                    
-                </div>
-                <!-- right div -->
-                <div class="bg-gray-100 rounded-2xl p-3 w-full md:w-[30%] ">
-                    <div class="flex justify-between pb-3">
-                        <h4 class="font-semibold">Title</h4>
-                        <p class="text-gray-500">Mark as read (<span id="count">0</span>)</p>
-                    </div>
-                    <div id="mark-read-container">
-                        <!-- dynamic div  -->
-                    </div>
-                </div>
+            <div id="mark-read-container">
+              <!-- dynamic div  -->
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
 
-        <section class="container mx-auto mt-8 md:mt-12 lg:mt-24 px-10 py-14 flex flex-col-reverse md:flex-row items-center justify-center gap-5 bg-[#12132D] text-white rounded-2xl">
-            <div class="flex flex-col gap-5 justify-center">
-                <h3 class="text-3xl md:text-5xl font-bold">Join Our Forum</h3>
-                <p class="text-slate-400">Share your favorite opinion and win and wp forum coffee mug! Yes, you can run unit tests and view the results directly within the app. </p>
-                <button class="btn text-white text-xl md:text-2xl border-none bg-[#797DFC] w-[70%] md:w-[50%]">Register Now</button>
-            </div>
-            <div>
-                <img src="images/joinforum.png" alt="">
-            </div>
-        </section>
+      <section class="container mx-auto mt-8 md:mt-12 lg:mt-24 px-10 py-14 flex flex-col-reverse md:flex-row items-center justify-center gap-5 bg-[#12132D] text-white rounded-2xl">
+        <div class="flex flex-col gap-5 justify-center">
+          <h3 class="text-3xl md:text-5xl font-bold">Join Our Forum</h3>
+          <p class="text-slate-400">
+            To share you openion with others and get notification for update
+            register here.Also you can win exciting gift by sharing your
+            openion.
+          </p>
+          <button class="btn text-white text-xl md:text-2xl border-none bg-[#797DFC] w-[70%] md:w-[50%]">
+            Register Now
+          </button>
+        </div>
+        <div>
+          <img src="images/joinforum.png" alt="" />
+        </div>
+      </section>
 
-        <!-- latest post -->
-        <section class="container mx-auto px-4 mt-8 md:mt-12 lg:mt-24">
-            <div class="text-center">
-                <h1 class="text-4xl font-extrabold">Latest Posts</h1>
-                <p class="text-gray-500 w-[80%] mx-auto">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
-            </div>
-            <div id="latest-post-container" class="flex gap-3 flex-col lg:flex-row">
-                <!-- add here latest post -->
-            </div>
-        </section>
+      <!-- latest post -->
+      <section class="container mx-auto px-4 mt-8 md:mt-12 lg:mt-24">
+        <div class="text-center">
+          <h1 class="text-4xl font-extrabold">Latest Posts</h1>
+          <p class="text-gray-500 w-[80%] mx-auto mb-5 md:mb-8">
+            Have a quick look on the most trending news around the world.
+          </p>
+        </div>
+        <div id="latest-post-container" class="flex gap-3 flex-col lg:flex-row">
+          <!-- add here latest post -->
+        </div>
+      </section>
     </main>
     <footer class="text-center py-20 mx-auto bg-gray-100">
-        <h2 class="text-3xl font-extrabold">SteAm</h2>
-        <p class="text-gray-500">For regular Update of current affairs and discuss about it with us subscribe to SteAm Forum.</p>
-        <ul class="flex gap-5 items-center justify-center">
-            <li><i class="fa-brands fa-facebook text-3xl"></i></li>
-            <li><i class="fa-brands fa-twitter text-3xl"></i></li>
-            <li><i class="fa-brands fa-github text-3xl"></i></li>
-            <li><i class="fa-brands fa-instagram text-3xl"></i></li>
-        </ul>
-        <hr class="border border-dotted bg-gray-300 m-10 ">
-        <p>2024, All Rights Reserved</p>
-
+      <h2 class="text-3xl font-extrabold">SteAm</h2>
+      <p class="text-gray-500">
+        For regular Update of current affairs and discuss about it with us
+        subscribe to SteAm Forum.
+      </p>
+      <ul class="flex gap-5 items-center justify-center">
+        <li><i class="fa-brands fa-facebook text-3xl"></i></li>
+        <li><i class="fa-brands fa-twitter text-3xl"></i></li>
+        <li><i class="fa-brands fa-github text-3xl"></i></li>
+        <li><i class="fa-brands fa-instagram text-3xl"></i></li>
+      </ul>
+      <hr class="border border-dotted bg-gray-300 m-10" />
+      <p>2024, All Rights Reserved</p>
     </footer>
     <script src="app.js"></script>
-</body>
+  </body>
 </html>

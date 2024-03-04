@@ -28,15 +28,15 @@ const allPost = async () => {
                         <div class="border-b-2 border-dotted border-gray-400"></div>
                         <div class="flex justify-between p-2">
                             <div class="flex gap-6">
-                                <p>
-                                <i class="fa-regular fa-message pr-1"></i> <span>${element.comment_count}</span>
-                                </p>
-                                <p>
-                                <i class="view fa-regular fa-eye pr-1"></i><span id="view-${count}">${element.view_count}</span>
-                                </p>
-                                <p>
-                                <i class="fa-regular fa-clock pr-1"></i><span>${element.posted_time} min</span>
-                                </p>
+                            <p>
+                            <i class="fa-regular fa-message pr-1"></i> <span>${element.comment_count}</span>
+                            </p>
+                            <p>
+                            <i class="view fa-regular fa-eye pr-1"></i><span id="view-${count}">${element.view_count}</span>
+                            </p>
+                            <p>
+                            <i class="fa-regular fa-clock pr-1"></i><span>${element.posted_time} min</span>
+                            </p>
                             </div>
                         <div onclick ="markRead('title-${count}','view-${count}')">
                         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
@@ -138,7 +138,7 @@ async function markRead(elementTitle, elementView) {
             <p class="flex gap-1 items-center text-gray-500">
             <i class="fa-regular fa-eye"></i><span>${view.innerText}</span>
             </p>
-        </div>
+        </div>  
     `;
   markReadContainer.appendChild(div);
   const count2 = markReadContainer.childNodes.length;
@@ -184,11 +184,11 @@ const latestPost = async () => {
                     </div>
                     <div class="">
                         <p class="text-xl font-semibold">${element.author.name}</p>
-                            ${profession}
-                        </div>
+                        ${profession}
                     </div>
                 </div>
-            </div> 
+            </div>
+        </div> 
         `;
     latestPostContainer.appendChild(div);
   });
