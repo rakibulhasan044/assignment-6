@@ -1,16 +1,19 @@
-const cardContainer = document.getElementById('card-container');
-const markReadContainer = document.getElementById('mark-read-container');
-const countRead = document.getElementById('count')
+const cardContainer = document.getElementById("card-container");
+const markReadContainer = document.getElementById("mark-read-container");
+const countRead = document.getElementById("count");
+const latestPostContainer = document.getElementById("latest-post-container");
 
 let count = 0;
-const allPost = async() =>{
-    const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts')
-    const data = await res.json();
-    data.posts.forEach(element => {
-        console.log(element)
-        count ++;
-        const div = document.createElement('div');
-       div.innerHTML = `
+const allPost = async () => {
+  const res = await fetch(
+    "https://openapi.programming-hero.com/api/retro-forum/posts"
+  );
+  const data = await res.json();
+  data.posts.forEach((element) => {
+    //console.log(element)
+    count++;
+    const div = document.createElement("div");
+    div.innerHTML = `
        <div class="flex gap-3 bg-gray-100 rounded-2xl p-3 mb-4">
             <div class=" h-20 w-24 relative">
                 <div id="${count}" class=" h-3 w-3 rounded-full absolute right-0"></div>
@@ -53,50 +56,91 @@ const allPost = async() =>{
                     </div>
                 </div>
             </div>
-       `
-        cardContainer.appendChild(div)
-        const active = document.getElementById(`${count}`)
-        if(element.isActive){
-            active.classList.add('bg-green-400')
-        } else {
-            active.classList.add('bg-red-700')
-        }
-    });
-}
+       `;
+    cardContainer.appendChild(div);
+    const active = document.getElementById(`${count}`);
+    if (element.isActive) {
+      active.classList.add("bg-green-400");
+    } else {
+      active.classList.add("bg-red-700");
+    }
+  });
+};
 
-
-async function markRead(elementTitle,elementView) {
-    const title = document.getElementById(elementTitle);
-    //const inTitle  = title.innerHTML;
-    //console.log(title)
-    //console.log(view)
-    const view = document.getElementById(elementView);
-        const div = document.createElement('div');
-        div.innerHTML = `
+async function markRead(elementTitle, elementView) {
+  const title = document.getElementById(elementTitle);
+  //const inTitle  = title.innerHTML;
+  //console.log(title)
+  //console.log(view)
+  const view = document.getElementById(elementView);
+  const div = document.createElement("div");
+  div.innerHTML = `
         <div class="flex md:flex-col lg:flex-row justify-between bg-white p-3 rounded-xl mb-3">
             ${title.innerText}
             <p class="flex gap-1 items-center text-gray-500">
                 <i class="fa-regular fa-eye"></i><span>${view.innerText}</span>
             </p>
         </div>
-        `
-    markReadContainer.appendChild(div);
-    const count2 = markReadContainer.childNodes.length;
-    console.log(count2)
-    countRead.innerText = count2 - 3;
-    console.log(view);
-    console.log(title);
-    
+        `;
+  markReadContainer.appendChild(div);
+  const count2 = markReadContainer.childNodes.length;
+  console.log(count2);
+  countRead.innerText = count2 - 3;
+  console.log(view);
+  console.log(title);
 }
 
+const latestPost = async () => {
+  const res = await fetch(
+    "https://openapi.programming-hero.com/api/retro-forum/latest-posts"
+  );
+  const data = await res.json();
+  data.forEach((element) => {
+    let date = ``;
+    //if(element)
+    let profession = ``;
+    console.log(element.author.posted_date);
+    if(element.author.posted_date){
+        date = `<p>${element.author.posted_date}</p>`
+    } else {
+        date =`<p>Unknown</p>`
+    }
 
-
-const latestPost = async() =>{
-
-}
-
-
-
-
+    if(element.author.designation){
+        profession = `<p class="text-gray-400">${element.author.designation}</p>`
+    } else {
+        profession =`<p class="text-gray-400">Unknown</p>`
+    }
+    const div = document.createElement("div");
+    div.innerHTML = `
+        <div class="card bg-base-100 shadow-xl border border-gray-300">
+            <figure class="mx-5 pt-5">
+                <img src="${element.cover_image}" alt="Shoes" class="rounded-xl" />
+            </figure>
+            <div class="space-y-2 m-10">
+                <div class="flex gap-4 items-center">
+                    <i class="fa-solid fa-calendar"></i>
+                    ${date}
+                </div>
+                <h3 class="text-xl font-semibold">${element.title}</h3>
+                <p class="text-gray-400">${element.description}</p>
+                    <div class="flex gap-4 items-center">
+                        <div class="h-20 w-20">
+                            <img class="rounded-full" src="${element.profile_image}" alt="">
+                        </div>
+                        <div class="">
+                            <p class="text-xl font-semibold">${element.author.name}</p>
+                            ${profession}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+        `;
+        latestPostContainer.appendChild(div);
+  });
+};
 
 allPost();
+
+latestPost();
