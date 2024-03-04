@@ -2,14 +2,13 @@ const cardContainer = document.getElementById("card-container");
 const markReadContainer = document.getElementById("mark-read-container");
 const countRead = document.getElementById("count");
 const latestPostContainer = document.getElementById("latest-post-container");
-const url =``;
 let count = 0;
+
+
 const allPost = async () => {
-    
     const res = await fetch("https://openapi.programming-hero.com/api/retro-forum/posts");
     const data = await res.json();
     data.posts.forEach((element) => {
-    //console.log(element)
     count++;
     const div = document.createElement("div");
     div.innerHTML = `
@@ -65,18 +64,14 @@ const allPost = async () => {
     }
   });
 };
+
 //******************************* *
 
 const searchPost = async (searchText) => {
-
-    //delete from here
-    console.log(searchText);
-    
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`);
     const data = await res.json();
     cardContainer.textContent = ``;
     data.posts.forEach((element) => {
-    //console.log(element)
     count++;
     const div = document.createElement("div");
     div.innerHTML = `
@@ -134,17 +129,17 @@ const searchPost = async (searchText) => {
 };
 
 async function markRead(elementTitle, elementView) {
-  const title = document.getElementById(elementTitle);
-  const view = document.getElementById(elementView);
-  const div = document.createElement("div");
-  div.innerHTML = `
+    const title = document.getElementById(elementTitle);
+    const view = document.getElementById(elementView);
+    const div = document.createElement("div");
+    div.innerHTML = `
         <div class="flex md:flex-col lg:flex-row justify-between bg-white p-3 rounded-xl mb-3">
             ${title.innerText}
             <p class="flex gap-1 items-center text-gray-500">
             <i class="fa-regular fa-eye"></i><span>${view.innerText}</span>
             </p>
         </div>
-        `;
+    `;
   markReadContainer.appendChild(div);
   const count2 = markReadContainer.childNodes.length;
   countRead.innerText = count2 - 3;
@@ -157,9 +152,7 @@ const latestPost = async () => {
     const data = await res.json();
     data.forEach((element) => {
     let date = ``;
-    //if(element)
     let profession = ``;
-    //console.log(element.author.posted_date);
     if (element.author.posted_date) {
       date = `<p>${element.author.posted_date}</p>`;
     } else {
@@ -171,6 +164,7 @@ const latestPost = async () => {
     } else {
       profession = `<p class="text-gray-400">Unknown</p>`;
     }
+
     const div = document.createElement("div");
     div.innerHTML = `
         <div class="card bg-base-100 shadow-xl border border-gray-300">
@@ -194,8 +188,7 @@ const latestPost = async () => {
                         </div>
                     </div>
                 </div>
-            </div>
-        
+            </div> 
         `;
     latestPostContainer.appendChild(div);
   });
