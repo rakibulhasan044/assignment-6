@@ -3,7 +3,7 @@ const markReadContainer = document.getElementById('mark-read-container');
 const countRead = document.getElementById('count')
 
 let count = 0;
-const allPost = async() => {
+const allPost = async() =>{
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/posts')
     const data = await res.json();
     data.posts.forEach(element => {
@@ -90,7 +90,13 @@ async function markRead(elementTitle,elementView) {
 }
 
 
-async function api() {
-    fetch()
+
+const latestPost = async() =>{
+
 }
+
+
+
+
+
 allPost();
